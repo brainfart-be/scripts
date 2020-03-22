@@ -1,0 +1,9 @@
+#! /bin/sh
+
+if [ -z "$1" ]
+then
+    echo "Port not defined ... try - killport \$PORT_NUMBER"
+else
+    kill -9 $(lsof -t -i:$1 -sTCP:LISTEN)
+    echo "Port $1 is now killed"
+fi

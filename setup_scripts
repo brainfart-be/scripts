@@ -1,0 +1,13 @@
+#! /bin/sh
+
+echo "First we add this forlder in your \$PATH (.bashrc)"
+
+SRC=$(pwd)
+
+EXPORT_STR="#This allow the usage of $SRC\nexport PATH=\"$SRC:\$PATH\""
+
+BASHRC=$HOME/.bashrc
+
+echo $EXPORT_STR >> $BASHRC
+
+echo "Now run \nsource $BASHRC\nor spawn a new terminal"
